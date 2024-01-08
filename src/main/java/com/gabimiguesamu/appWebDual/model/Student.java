@@ -46,7 +46,11 @@ public class Student {
     @JoinColumn(name="id_alumno")
     private List<Task> taskList;
 
-    public Student(String dni, String name, String lastName, String email, String password, Date bornDate, String phone, Integer dualHours, Integer fctHours, String observations, Teacher teacher, List<Task> taskList) {
+    @ManyToOne
+    @JoinColumn(name="id_empresa")
+    private Enterprise enterprise;
+
+    public Student(String dni, String name, String lastName, String email, String password, Date bornDate, String phone, Integer dualHours, Integer fctHours, String observations, Teacher teacher, List<Task> taskList, Enterprise enterprise) {
         this.dni = dni;
         this.name = name;
         this.lastName = lastName;
@@ -59,6 +63,7 @@ public class Student {
         this.observations = observations;
         this.teacher = teacher;
         this.taskList = taskList;
+        this.enterprise = enterprise;
     }
 
     public Student(){
@@ -161,6 +166,14 @@ public class Student {
         this.taskList = taskList;
     }
 
+    public Enterprise getEnterprise() {
+        return enterprise;
+    }
+
+    public void setEnterprise(Enterprise enterprise) {
+        this.enterprise = enterprise;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -176,14 +189,7 @@ public class Student {
                 ", observations='" + observations + '\'' +
                 ", teacher=" + teacher +
                 ", taskList=" + taskList +
+                ", enterprise=" + enterprise +
                 '}';
-    }
-
-    public void removeTask(Task task){
-        taskList.remove(task);
-    }
-
-    public void addTask(Task task){
-        taskList.add(task);
     }
 }
