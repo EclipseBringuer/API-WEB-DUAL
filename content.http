@@ -1,0 +1,17 @@
+### Obtener el index.html
+GET http://localhost:8080
+
+### Obtener todos los alumnos
+GET http://localhost:8080/student/all
+
+### Obtener todas las empresas
+GET http://localhost:8080/enterprise/all
+
+### Obtener todos los profesores
+GET http://localhost:8080/teacher/all
+
+### Obtener todas las tareas
+GET http://localhost:8080/task/all
+
+### Obtener profesor por id
+GET http://localhost:8080/teacher/1
