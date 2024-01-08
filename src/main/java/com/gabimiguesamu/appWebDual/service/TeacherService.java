@@ -22,7 +22,7 @@ public class TeacherService {
         return teacherRepository.findAll();
     }
 
-    public Optional<Teacher> findById(Long id){
-        return teacherRepository.findById(id);
+    public Teacher findById(Long id){
+        return teacherRepository.findTeacherById(id);
     }
 }
