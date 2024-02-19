@@ -7,9 +7,10 @@ import java.util.List;
 @Entity
 @Table(name = "alumno")
 public class Student {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String dni;
+    private Long id;
 
     @Column(name="nombre")
     private String name;
@@ -50,8 +51,8 @@ public class Student {
     @JoinColumn(name="id_empresa")
     private Enterprise enterprise;
 
-    public Student(String dni, String name, String lastName, String email, String password, Date bornDate, String phone, Integer dualHours, Integer fctHours, String observations, Teacher teacher, List<Task> taskList, Enterprise enterprise) {
-        this.dni = dni;
+    public Student(Long id, String name, String lastName, String email, String password, Date bornDate, String phone, Integer dualHours, Integer fctHours, String observations, Teacher teacher, List<Task> taskList, Enterprise enterprise) {
+        this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.email = email;
@@ -70,12 +71,12 @@ public class Student {
 
     }
 
-    public String getDni() {
-        return dni;
+    public Long getId() {
+        return id;
     }
 
-    public void setDni(String dni) {
-        this.dni = dni;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -177,7 +178,7 @@ public class Student {
     @Override
     public String toString() {
         return "Student{" +
-                "dni='" + dni + '\'' +
+                "dni='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +

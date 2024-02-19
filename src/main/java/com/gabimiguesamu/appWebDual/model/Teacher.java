@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "profesor")
 public class Teacher {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

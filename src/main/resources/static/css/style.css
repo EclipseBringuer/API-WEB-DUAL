@@ -1,3 +1,127 @@
-body{
-    background-color: antiquewhite;
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header img {
+    height: 100px;
+    margin-right: 20px;
+}
+.title {
+    margin-left: 20px;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.filter-item {
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+select,
+input[type="date"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.progress {
+    width: 100%;
+    margin-right: -20px;
+    margin-bottom: 20px;
+}
+
+.dual-progress,
+.fct-progress {
+    width: 48%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-color: #eee;
+    padding: 10px;
+    box-shadow: 1px 1px 2px #ccc;
+}
+
+.dual-progress p,
+.fct-progress p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+.completed-progress {
+    height: 100%;
+    background-color: #002859;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+    font-size: 14px;
+}
+
+th {
+    background-color: #002859;
+    color: #fff;
+}
+
+td:nth-child(6) {
+    width: 50px;
+}
+
+td:nth-child(7) {
+    width: 150px;
+}
+
+td:last-child {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .dual-progress,
+    .fct-progress {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
 }
