@@ -19,3 +19,4 @@ public class SecurityService {
         return (student != null && student.getPassword().equals(password)) ? student : null;
     }
 }
+
