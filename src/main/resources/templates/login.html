@@ -15,10 +15,10 @@
     <main>
         <img th:src="@{/img/cabecera-login.png}" alt="Titulo de Cesur" />
         <h1>Login</h1>
-        <form method="post">
-            <input type="email" placeholder="Usuario" name="email"/>
-            <input type="password" placeholder="Contraseña" name="password"/>
-            <button th:onclick="@{/web/login}">Iniciar Sesión</button>
+        <form th:action="@{/web/login}" method="post">
+            <input type="text" name="email" placeholder="email" />
+            <input type="password" name="password" placeholder="password" />
+            <button type="submit">Login</button>
         </form>
     </main>
     <footer>
