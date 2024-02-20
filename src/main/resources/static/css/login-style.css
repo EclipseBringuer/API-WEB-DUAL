@@ -88,15 +88,18 @@ form button {
     margin-top: 30px;
     padding: 15px;
     border-radius: 20px;
-    border: none;
+    border: solid 3px #002859;
     background-color: #002859;
     color: #ffc828;
     font-weight: bold;
+    transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
 }
 
 form button:hover {
     background-color: azure;
-    border: solid 3px;
     color:#002859;
     font-weight: bold;
+}
+.error-message{
+    color:darkred;
 }
