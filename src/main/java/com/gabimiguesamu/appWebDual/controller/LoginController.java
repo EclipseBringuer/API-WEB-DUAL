@@ -26,7 +26,7 @@ public class LoginController {
 
             model.addAttribute("alumno", student);
 
-            return "pantalla principal";
+            return "index";
 
         } else {
 
