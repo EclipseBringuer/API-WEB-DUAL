@@ -17,7 +17,12 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
-    @GetMapping("/login")
+    @GetMapping("")
+    public String landPage(){
+        return "login";
+    }
+
+    @PostMapping("/login")
     public String login(@RequestParam String email, @RequestParam String password, Model model) {
 
         Student student = loginService.userLogin(email, password);
@@ -31,7 +36,7 @@ public class LoginController {
         } else {
 
             model.addAttribute("error", "Credenciales inválidas. Por favor, inténtalo de nuevo.");
-            return "error";
+            return "asdasda";
         }
     }
 
