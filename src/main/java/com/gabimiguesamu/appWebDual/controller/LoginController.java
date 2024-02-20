@@ -31,7 +31,7 @@ public class LoginController {
         } else {
 
             model.addAttribute("error", "Credenciales inválidas. Por favor, inténtalo de nuevo.");
-            return "index";
+            return "error";
         }
     }
 
