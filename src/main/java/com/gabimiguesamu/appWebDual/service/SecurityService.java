@@ -13,7 +13,7 @@ public class SecurityService {
     private StudentRepository studentRepository;
 
     public Student validateEmailAndPassword(String email, String password) {
-        Student student = studentRepository.findByEmailAndPassword(email);
+        Student student = studentRepository.findByEmailAndPassword(email,password);
 
         // Devolver el objeto Student si las credenciales son válidas, de lo contrario, devolver null
         return (student != null && student.getPassword().equals(password)) ? student : null;
