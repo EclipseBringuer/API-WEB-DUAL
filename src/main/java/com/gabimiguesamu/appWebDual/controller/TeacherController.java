@@ -1,7 +1,6 @@
 package com.gabimiguesamu.appWebDual.controller;
 
 import com.gabimiguesamu.appWebDual.model.Teacher;
-import com.gabimiguesamu.appWebDual.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
