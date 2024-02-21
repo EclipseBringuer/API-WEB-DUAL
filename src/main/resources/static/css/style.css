@@ -62,6 +62,10 @@ img{
     margin-bottom: 10px;
 }
 
+.filter-item label{
+    margin-bottom: 5px;
+}
+
 select,
 input {
     padding: 5px;
