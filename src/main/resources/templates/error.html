@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+      span {
+        background: linear-gradient(
+          to right,
+          violet,
+          indigo,
+          blue,
+          green,
+          yellow,
+          orange,
+          red
+        );
+        -webkit-background-clip: text;
+        color: transparent;
+        text-shadow: 0px 0px 10px lightgray;
+        font-size: 30px;
+      }
+    </style>
+    <title>ReGay</title>
+  </head>
+  <body>
+    <h1>Ha ocurrido un imprevisto!!!</h1>
+    <h2>Resulta ser que eres ✨<span>Re Gay</span>✨</h2>
+    <img alt="ReGay" th:src="@{/img/image.jpg}" />
+  </body>
+</html>
