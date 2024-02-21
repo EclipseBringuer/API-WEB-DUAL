@@ -62,7 +62,7 @@ img{
     margin-bottom: 10px;
 }
 
-.filter-item label{
+.filter-item *{
     margin-bottom: 5px;
 }
 
