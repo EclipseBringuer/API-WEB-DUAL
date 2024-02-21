@@ -1,30 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Practice Dashboard</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <title>Main</title>
 </head>
 <body>
-<div class="container">
+<div class="folio">
     <div class="header">
-        <img src="logo.png" alt="CESUR Logo">
-        <div class="title" th:with="alumno=${session.alumno}">
-            <h1>CESUR</h1>
-            <p>Tu Centro Oficial de FP</p>
-            <h1 th:text="${alumno.name}"></h1>
-
-            <table>
-                <tr th:each="task : ${alumno.taskList}">
-                    <td th:text="${task.name}"></td>
-                </tr>
-            </table>
+        <div class="title">
+            <img th:src="@{/img/Cesur-removebg.png}" alt="logo de cesur" />
+            <div>
+                <h1>CESUR</h1>
+                <p>Tu Centro Oficial de FP</p>
+            </div>
+        </div>
+        <div class="perfil">
+            <img th:src="@{/img/Francisco-Romero.jpg}" alt="logo de cesur" />
+            <h2>Francisco Romero Guillén</h2>
+        </div>
+    </div>
+    <div class="progress">
+        <div class="dual-progress">
+            <p>25/600 horas Dual Completadas</p>
+            <div class="progress-bar">
+                <div class="completed-progress" style="width: 50%"></div>
+            </div>
+        </div>
+        <div class="fct-progress">
+            <p>25/600 horas FCT Completadas</p>
+            <div class="progress-bar">
+                <div class="completed-progress" style="width: 50%"></div>
+            </div>
         </div>
     </div>
     <div class="filters">
         <div class="filter-item">
-            <label for="task-filter">Nombre de la tarea</label>
+            <label for="task-filter">Nombre de la tarea:</label>
+            <input type="search" />
+        </div>
+
+        <div class="filter-item">
+            <label for="task-filter">Tipo de práctica:</label>
             <select id="task-filter">
                 <option value="all">Todas</option>
                 <option value="dual">Dual</option>
@@ -32,58 +50,29 @@
             </select>
         </div>
         <div class="filter-item">
-            <label for="date-filter">Filtrar por fecha</label>
-            <input type="date" id="date-filter">
-        </div>
-        <div class="filter-item">
-            <label for="tutor-filter">Tutor Practicas:</label>
-            <select id="tutor-filter">
-                <option value="all">Nombre del tutor</option>
-            </select>
-        </div>
-        <div class="filter-item">
-            <label for="company-filter">Empresa asignada:</label>
-            <select id="company-filter">
-                <option value="all">Nombre de la Empresa</option>
-            </select>
+            <label for="date-filter">Filtrar por fecha:</label>
+            <input type="date" id="date-filter" />
         </div>
     </div>
-    <div class="dashboard">
-        <div class="progress">
-            <div class="dual-progress">
-                <p>25/600 horas Dual Completadas</p>
-                <div class="progress-bar">
-                    <div class="completed-progress" style="width: 50%;"></div>
-                </div>
-            </div>
-            <div class="fct-progress">
-                <p>25/600 horas FCT Completadas</p>
-                <div class="progress-bar">
-                    <div class="completed-progress" style="width: 50%;"></div>
-                </div>
-            </div>
-        </div>
-        <table>
-            <thead>
-            <tr>
-                <th>Actividad</th>
-                <th>Tipo Practica</th>
-                <th>Fecha</th>
-                <th>Nombre del Alumno</th>
-                <th>Horas</th>
-                <th></th>
-                <th>Observaciones</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td colspan="7">
-                    <p>Tabla sin contenido</p>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+    <table>
+        <thead>
+        <tr>
+            <th>Actividad</th>
+            <th>Tipo Practica</th>
+            <th>Fecha</th>
+            <th>Nombre del Alumno</th>
+            <th>Horas</th>
+            <th>Observaciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td colspan="7">
+                <p>Tabla sin contenido</p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>
