@@ -9,7 +9,7 @@ public class Utility {
             if(os.contains("win")) {
                 Runtime.getRuntime().exec("cmd /c start chrome http://localhost:8080/web/login");
             }else{
-                Runtime.getRuntime().exec("google-chrome http://localhost:8080/web/login");
+                Runtime.getRuntime().exec("open -a Safari http://localhost:8080/web/login");
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

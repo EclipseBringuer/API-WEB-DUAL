@@ -10,9 +10,16 @@
 <div class="container">
     <div class="header">
         <img src="logo.png" alt="CESUR Logo">
-        <div class="title">
+        <div class="title" th:with="alumno=${session.alumno}">
             <h1>CESUR</h1>
             <p>Tu Centro Oficial de FP</p>
+            <h1 th:text="${alumno.name}"></h1>
+
+            <table>
+                <tr th:each="task : ${alumno.taskList}">
+                    <td th:text="${task.name}"></td>
+                </tr>
+            </table>
         </div>
     </div>
     <div class="filters">

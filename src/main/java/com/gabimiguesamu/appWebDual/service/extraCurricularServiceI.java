@@ -9,6 +9,9 @@ public interface extraCurricularServiceI {
     /** Obtener todas las tareas del alumno */
     List<Task> allStudentActivities(Long id);
 
+    /* Obtener una sola actividad */
+    Task singleActivity(Long id);
+
     /** Guardar una nueva actividad*/
     Task  saveNewActivity(Task k);
 

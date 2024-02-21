@@ -12,7 +12,7 @@ import java.util.List;
  * Servicio de Gestion de actividades extraescolares
  */
 @Service
-public class extraCurricularServiceImpl implements extraCurricularServiceI{
+public class ExtraCurricularServiceImpl implements extraCurricularServiceI{
 
     /** Inyeccion de repositorio */
     private final TaskRepository taskRepository;
@@ -21,7 +21,7 @@ public class extraCurricularServiceImpl implements extraCurricularServiceI{
     private final StudentRepository studentRepository;
 
     @Autowired
-    public extraCurricularServiceImpl(TaskRepository taskRepository, StudentRepository studentRepository) {
+    public ExtraCurricularServiceImpl(TaskRepository taskRepository, StudentRepository studentRepository) {
         this.taskRepository = taskRepository;
         this.studentRepository = studentRepository;
     }
@@ -30,6 +30,11 @@ public class extraCurricularServiceImpl implements extraCurricularServiceI{
     @Override
     public List<Task> allStudentActivities(Long id) {
         return studentRepository.findById(id).get().getTaskList();
+    }
+
+    @Override
+    public Task singleActivity(Long id) {
+        return taskRepository.findById(id).orElse(null);
     }
 
     @Override

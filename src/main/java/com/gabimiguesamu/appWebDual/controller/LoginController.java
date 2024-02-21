@@ -1,6 +1,7 @@
 package com.gabimiguesamu.appWebDual.controller;
 import com.gabimiguesamu.appWebDual.model.Student;
 import com.gabimiguesamu.appWebDual.service.LoginService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,12 +24,13 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String login(@RequestParam String email, @RequestParam String password, Model model) {
+    public String login(@RequestParam String email, @RequestParam String password, Model model, HttpSession session) {
 
         Student student = loginService.userLogin(email, password);
 
         if (student != null) {
             model.addAttribute("alumno", student);
+            session.setAttribute("alumno",student);
             return "index";
         } else {
             model.addAttribute("error", "Credenciales inválidas. Por favor, inténtalo de nuevo.");
