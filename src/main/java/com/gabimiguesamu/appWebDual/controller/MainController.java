@@ -10,14 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/main")
 public class MainController {
 
-    /** Consumo de servicio */
-    private final ExtraCurricularServiceImpl extraCurricularService;
-
-    @Autowired
-    public MainController(ExtraCurricularServiceImpl extraCurricularService) {
-        this.extraCurricularService = extraCurricularService;
-    }
-
     @GetMapping("/profe")
     public String toTeacherView(){
         return "teacher";
