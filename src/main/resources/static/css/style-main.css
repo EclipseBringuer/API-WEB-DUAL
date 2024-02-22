@@ -150,3 +150,19 @@ td:last-child {
         margin-bottom: 20px;
     }
 }
+button {
+    margin-top: 30px;
+    padding: 15px;
+    border-radius: 20px;
+    border: solid 3px #002859;
+    background-color: #002859;
+    color: #ffc828;
+    font-weight: bold;
+    transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background-color: azure;
+    color:#002859;
+    font-weight: bold;
+}
