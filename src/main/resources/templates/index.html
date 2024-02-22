@@ -18,7 +18,7 @@
         </div>
         <div class="perfil">
             <img th:src="@{/img/Francisco-Romero.jpg}" alt="logo de cesur" />
-            <h2 th:text="${alumno.getName()+' '+alumno.getLastName()}"></h2>
+            <h2 th:text="${alumno.name+' '+alumno.lastName}"></h2>
         </div>
     </div>
     <div class="progress">
@@ -60,9 +60,15 @@
             <th>Actividad</th>
             <th>Tipo Practica</th>
             <th>Fecha</th>
-            <th>Nombre del Alumno</th>
             <th>Horas</th>
             <th>Observaciones</th>
+        </tr>
+        <tr th:each="task : ${alumno.getTaskList()}">
+            <td th:text="${task.name}"></td>
+            <td th:text="${task.practiceKind}"></td>
+            <td th:text="${task.date}"></td>
+            <td th:text="${task.hoursDone}"></td>
+            <td th:text="${task.observations}"></td>
         </tr>
         </thead>
         <tbody>

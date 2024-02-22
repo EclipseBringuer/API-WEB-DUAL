@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/enterprise")
 public class EnterpriseController {
 
-    @GetMapping("/enterprise/goBack")
+
+    @GetMapping("/goBack")
     public String goBack() {
 
         return "index";
