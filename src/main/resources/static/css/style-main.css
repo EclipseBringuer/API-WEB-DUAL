@@ -163,6 +163,18 @@ button {
 
 button:hover {
     background-color: azure;
-    color:#002859;
+    color: #002859;
     font-weight: bold;
+}
+tr:hover{
+    background-color: lightgrey;
+}
+input,select{
+    border-radius: 15px;
+    padding: 15px;
+    background-color: lightgray;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+    width: 80%;
 }
