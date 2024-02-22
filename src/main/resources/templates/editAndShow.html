@@ -41,7 +41,8 @@
         </div>
 
         <button type="submit">Guardar</button>
-        <button type="">Volver</button>
+        <form th:action="@{/backwards}" method="get">
+            <button type="submit">Volver</button>
     </form>
 </main>
 </body>
