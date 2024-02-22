@@ -51,6 +51,7 @@ public class Student {
     @JoinColumn(name="id_empresa")
     private Enterprise enterprise;
 
+
     public Student(Long id, String name, String lastName, String email, String password, Date bornDate, String phone, Integer dualHours, Integer fctHours, String observations, Teacher teacher, List<Task> taskList, Enterprise enterprise) {
         this.id = id;
         this.name = name;

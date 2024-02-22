@@ -127,3 +127,5 @@ INSERT INTO student (nombre, apellidos, email, pass, fecha_nac, telefono, num_ho
 VALUES ('Juan', 'García López', 'juangarcia@email.com', 'password123', '1998-05-12', '654321098', 300, 150, 'Buen estudiante y responsable', 1),
 ('María', 'Pérez Sánchez', 'mariaps@email.com', 'mipass123', '2000-02-20', '678901234', 400, 200, 'Muy participativa y trabajadora', 1),
 ('Pablo', 'Ruiz Moreno', 'pablomr@email.com', 'contraseña123', '2001-10-05', '612345678', 250, 100, 'Interés especial en desarrollo web', 1) [42102-224]
+2024-02-22 18:59:27.039251+01:00 jdbc[3]: exception
+                                                                                                                                                                                                                                                                                                                                                        

@@ -23,15 +23,15 @@
     </div>
     <div class="progress">
         <div class="dual-progress">
-            <p>25/600 horas Dual Completadas</p>
+            <p th:text="${alumno.getDualHours()+'/600 horas Dual Completadas'}"></p>
             <div class="progress-bar">
-                <div class="completed-progress" style="width: 50%"></div>
+                <div class="completed-progress" th:style="'width: ' + ${ (alumno.getDualHours()*100)/600} + '%'"></div>
             </div>
         </div>
         <div class="fct-progress">
-            <p>25/600 horas FCT Completadas</p>
+            <p th:text="${alumno.getFctHours()+'/600 horas FCT Completadas'}"></p>
             <div class="progress-bar">
-                <div class="completed-progress" style="width: 50%"></div>
+                <div class="completed-progress" th:style="'width: ' + ${ (alumno.getFctHours()*100)/600} + '%'"></div>
             </div>
         </div>
     </div>
@@ -63,6 +63,8 @@
             <th>Horas</th>
             <th>Observaciones</th>
         </tr>
+        </thead>
+        <tbody>
         <tr th:each="task : ${alumno.getTaskList()}">
             <td th:text="${task.name}"></td>
             <td th:text="${task.practiceKind}"></td>
@@ -70,13 +72,7 @@
             <td th:text="${task.hoursDone}"></td>
             <td th:text="${task.observations}"></td>
         </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td colspan="7">
-                <p>Tabla sin contenido</p>
-            </td>
-        </tr>
+
         </tbody>
     </table>
 </div>
