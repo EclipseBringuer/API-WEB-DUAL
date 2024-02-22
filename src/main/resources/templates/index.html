@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/style-main.css}" />
     <title>Main</title>
 </head>
-<body>
+<body th:with="alumno=${session.alumno}">
 <div class="folio">
     <div class="header">
         <div class="title">
@@ -18,7 +18,7 @@
         </div>
         <div class="perfil">
             <img th:src="@{/img/Francisco-Romero.jpg}" alt="logo de cesur" />
-            <h2>Francisco Romero Guillén</h2>
+            <h2 th:text="${alumno.getName()+' '+alumno.getLastName()}"></h2>
         </div>
     </div>
     <div class="progress">
