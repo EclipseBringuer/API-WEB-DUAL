@@ -25,7 +25,7 @@ public class EditTaskController {
     }
 
     @PostMapping("/save")
-    public String saveActivity(@RequestBody Task t, HttpSession session){
+    public String saveActivity(@ModelAttribute Task t, HttpSession session){
 
         Student s = (Student) session.getAttribute("alumno");
 
@@ -38,9 +38,14 @@ public class EditTaskController {
     }
 
     @PostMapping("/update")
-    public String updateActivity(@RequestBody Task t, HttpSession session){
+    public String updateActivity(@ModelAttribute Task t, HttpSession session){
 
-        //TODO terminar el update
+       Student s = (Student) session.getAttribute("alumno");
+
+       s.getTaskList().add(t);
+
+       //TODO comprobar que se le ponga al alumno en la base de datos
+       extraCurricularService.saveNewActivity(t);
 
         return "index";
 
