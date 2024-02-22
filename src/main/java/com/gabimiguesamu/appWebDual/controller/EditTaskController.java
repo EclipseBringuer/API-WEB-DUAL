@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("taskEdit")
+@RequestMapping("")
 public class EditTaskController {
 
     private final ExtraCurricularServiceImpl extraCurricularService;
@@ -19,6 +19,10 @@ public class EditTaskController {
         this.extraCurricularService = extraCurricularService;
     }
 
+    @GetMapping("/taskEdit")
+    public String landPage(){
+        return "editAndShow";
+    }
     @GetMapping("/backwards")
     public String backwards(){
         return "index";
