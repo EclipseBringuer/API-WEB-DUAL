@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/css/edit-and-show.css}" />
+    <title>Edit</title>
+</head>
+<body>
+<aside>
+    <img th:src="@{/img/cabecera-login.png}" alt="Logo de Cesur" />
+    <p>Sistema de Gestión Dual</p>
+</aside>
+<main>
+    <header>
+        <h1>Información de la actividad:</h1>
+    </header>
+    <article>
+        <form method="post" th:action="@{}">
+            <label for="titulo">Actividad Realizada:</label>
+            <input type="text" name="titulo" id="titulo" />
+
+            <label for="observacion">Observaciones:</label>
+            <input type="text" name="observacion" id="observacion" />
+
+            <label for="horas">Horas realizadas</label>
+            <input type="number" name="horas" id="horas" value="0" min="0" />
+
+            <label for="tipos">Tipo:</label>
+            <select id="tipos" name="tipo">
+                <option value="fct">FCT</option>
+                <option value="dual">Dual</option>
+            </select>
+
+            <label for="fecha">Fecha:</label>
+            <input type="date" name="fecha" id="fecha" />
+
+            <button type="submit">Guardar</button>
+            <button type="">Volver</button>
+        </form>
+    </article>
+</main>
+</body>
+</html>
