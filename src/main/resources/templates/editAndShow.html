@@ -12,33 +12,37 @@
     <p>Sistema de Gestión Dual</p>
 </aside>
 <main>
-    <header>
-        <h1>Información de la actividad:</h1>
-    </header>
-    <article>
-        <form method="post" th:action="@{}">
-            <label for="titulo">Actividad Realizada:</label>
-            <input type="text" name="titulo" id="titulo" />
+    <h1>Añadir actividad:</h1>
+    <form method="post" th:action="@{}">
+        <div class="campos">
 
-            <label for="observacion">Observaciones:</label>
-            <input type="text" name="observacion" id="observacion" />
+            <div class="campo">
+                <label for="horas">Horas realizadas</label>
+                <input type="number" name="horas" id="horas" value="0" min="0" />
 
-            <label for="horas">Horas realizadas</label>
-            <input type="number" name="horas" id="horas" value="0" min="0" />
+                <label for="fecha">Fecha:</label>
+                <input type="date" name="fecha" id="fecha" />
 
-            <label for="tipos">Tipo:</label>
-            <select id="tipos" name="tipo">
-                <option value="fct">FCT</option>
-                <option value="dual">Dual</option>
-            </select>
+                <label for="titulo">Actividad Realizada:</label>
+                <input type="text" name="titulo" id="titulo" />
+            </div>
 
-            <label for="fecha">Fecha:</label>
-            <input type="date" name="fecha" id="fecha" />
+            <div class="campo">
+                <label for="tipos">Tipo:</label>
+                <select id="tipos" name="tipo">
+                    <option value="fct">FCT</option>
+                    <option value="dual">Dual</option>
+                </select>
 
-            <button type="submit">Guardar</button>
-            <button type="">Volver</button>
-        </form>
-    </article>
+                <label for="observacion">Observaciones:</label>
+                <textarea name="observacion" id="observacion"></textarea>
+            </div>
+
+        </div>
+
+        <button type="submit">Guardar</button>
+        <button type="">Volver</button>
+    </form>
 </main>
 </body>
 </html>

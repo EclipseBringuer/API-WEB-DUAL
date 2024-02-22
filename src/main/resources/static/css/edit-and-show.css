@@ -30,10 +30,62 @@ main {
     flex: 1;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-form{
+form {
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 65%;
+}
+
+.campos {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+form input,
+select,
+textarea {
+    margin-bottom: 30px;
+    border-radius: 15px;
+    padding: 15px;
+    background-color: lightgray;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+    width: 80%;
+}
+form button {
+    margin-top: 30px;
+    padding: 15px;
+    border-radius: 20px;
+    border: solid 3px #002859;
+    background-color: #002859;
+    color: #ffc828;
+    font-weight: bold;
+    transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
+}
+
+form button:hover {
+    background-color: azure;
+    color: #002859;
+    font-weight: bold;
+}
+
+#observacion {
+    height: 100%;
+}
+textarea {
+    resize: none;
+}
+label{
+    margin-bottom: 5px;
 }
