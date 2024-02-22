@@ -5,7 +5,9 @@
 <h2>Nombre de la empresa o Ubicacion</h2>
 
 <label for="nombre">Nombre de la Empresa:</label>
-<p id="nombre"></p>
+<p id="nombre">
+<h2 th:text="${alumno.getEnterprise().getName()}"></h2>
+</p>
 
 <label for="email">Email:</label>
 <p id="email">
