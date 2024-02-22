@@ -75,7 +75,9 @@
 
         </tbody>
     </table>
-    <button th:onclick="@{/taskEdit}" role="button">Crear Actividad</button>
+    <form th:action="@{/taskEdit}" method="get">
+        <button type="submit">Crear Actividad</button>
+    </form>
 </div>
 </body>
 </html>
