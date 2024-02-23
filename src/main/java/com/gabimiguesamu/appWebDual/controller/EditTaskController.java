@@ -53,7 +53,7 @@ public class EditTaskController {
 
         s.getTaskList().add(t);
 
-        extraCurricularService.singleActivity();
+        //extraCurricularService.singleActivity();
 
         session.setAttribute("alumno", s);
 
