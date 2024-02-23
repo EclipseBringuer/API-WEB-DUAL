@@ -39,6 +39,11 @@ public class ExtraCurricularServiceImpl implements extraCurricularServiceI{
     }
 
     @Override
+    public Task singleNameActivity(String name) {
+        return taskRepository.findByName(name);
+    }
+
+    @Override
     public Task saveNewActivity(Task k) {
         return taskRepository.save(k);
     }
