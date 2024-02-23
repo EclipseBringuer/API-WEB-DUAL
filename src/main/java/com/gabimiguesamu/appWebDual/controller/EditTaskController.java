@@ -55,8 +55,14 @@ public class EditTaskController {
 
     }
 
+    @PostMapping("/delete")
+    public String deleteActivity(@ModelAttribute Task task, HttpSession session) {
+        Student student = (Student) session.getAttribute("alumno");
 
+        extraCurricularService.deleteNewActivity(task);
 
+        session.setAttribute("alumno", student);
 
-
+        return "index";
+    }
 }

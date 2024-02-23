@@ -51,6 +51,7 @@ public class ExtraCurricularServiceImpl implements extraCurricularServiceI{
     public Task deleteNewActivity(Task t) {
 
         taskRepository.delete(t);
+
         return t;
     }
 }

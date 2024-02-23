@@ -17,8 +17,13 @@
             </div>
         </div>
         <div class="perfil">
+
             <img th:src="@{/img/Francisco-Romero.jpg}" alt="logo de cesur" />
-            <h2 th:text="${alumno.getName()+' '+alumno.getLastName()}"></h2>
+           <div> <h2 th:text="${alumno.getName()+' '+alumno.getLastName()}"></h2>
+            <a th:href="@{/info}">
+                <button>Info</button>
+            </a></div>
+
         </div>
     </div>
     <div class="progress">
@@ -78,6 +83,7 @@
     <form th:action="@{/taskEdit}" method="get">
         <button type="submit">Crear Actividad</button>
     </form>
+
 </div>
 </body>
 </html>
