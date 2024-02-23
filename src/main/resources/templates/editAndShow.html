@@ -41,7 +41,9 @@
         </div>
 
         <button type="submit">Guardar</button>
-        <button type="submit">Eliminar</button>
+        <form th:action="@{/delete}" method="get">
+            <button type="submit">Eliminar</button>
+        </form>
     </form>
         <form th:action="@{/backwards}" method="get">
             <button type="submit">Volver</button>
