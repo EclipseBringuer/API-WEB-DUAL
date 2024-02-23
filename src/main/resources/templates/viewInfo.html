@@ -24,14 +24,18 @@
 <main th:if="${isProfe}">
     <h1>Información del profesor</h1>
     <img alt="foto del profesor" th:src="${alumno.getTeacher().getImage()}">
-    <h2 th:text="${alumno.getTeacher().getName()+' '+alumno.getTeacher().getLastName()}"></h2>
+    <h2 th:text="${alumno.getTeacher().getName()}"></h2>
     <p><strong>Dirección de contacto: </strong><span th:text="${alumno.getTeacher().getEmail()}"></span></p>
 </main>
 <main th:unless="${isProfe}">
     <h1>Información de la empresa</h1>
     <img alt="foto del profesor" th:src="${alumno.getEnterprise().getLogo()}">
     <h2 th:text="${alumno.getEnterprise().getName()}"></h2>
-    <p><strong>Dirección de contacto: </strong><span th:text="${alumno.getEnterprise().getEmail()}"></span></p>
+    <p><strong>Correo Electrónico: </strong><span th:text="${alumno.getEnterprise().getEmail()}"></span></p>
+    <p><strong>Teléfono: </strong><span th:text="${alumno.getEnterprise().getPhone()}"></span></p>
+    <p><strong>Ubicación: </strong><span th:text="${alumno.getEnterprise().getUbication()}"></span></p>
+    <p><strong>Responsable: </strong><span th:text="${alumno.getEnterprise().getResponsable()}"></span></p>
+    <p><strong>Observaciones: </strong><span th:text="${alumno.getEnterprise().getObservations()}"></span></p>
 </main>
 </body>
 </html>
