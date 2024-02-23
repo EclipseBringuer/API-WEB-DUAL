@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" th:href="@{/css/style-main.css}"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/css/style-main.css}" />
     <title>Main</title>
 </head>
 <body th:with="alumno=${session.alumno}">
 <div class="folio">
     <div class="header">
         <div class="title">
-            <img th:src="@{/img/Cesur-removebg.png}" alt="logo de cesur"/>
+            <img th:src="@{/img/Cesur-removebg.png}" alt="logo de cesur" />
             <div>
                 <h1>CESUR</h1>
                 <p>Tu Centro Oficial de FP</p>
             </div>
         </div>
         <div class="perfil">
-            <img th:src="@{/img/Francisco-Romero.jpg}" alt="logo de cesur"/>
-            <h2 th:text="${alumno.getName()+' '+alumno.getLastName()}"></h2>
+
+            <img th:src="@{/img/Francisco-Romero.jpg}" alt="logo de cesur" />
+            <div> <h2 th:text="${alumno.getName()+' '+alumno.getLastName()}"></h2>
+                <a th:href="@{/info}">
+                    <button>Info</button>
+                </a></div>
+
         </div>
     </div>
     <div class="progress">
@@ -51,7 +56,7 @@
         </div>
         <div class="filter-item">
             <label for="date-filter">Filtrar por fecha:</label>
-            <input type="date" id="date-filter"/>
+            <input type="date" id="date-filter" />
         </div>
     </div>
     <table>
@@ -78,6 +83,7 @@
     <form th:action="@{/taskEdit}" method="get">
         <button type="submit">Crear Actividad</button>
     </form>
+
 </div>
 </body>
 </html>
