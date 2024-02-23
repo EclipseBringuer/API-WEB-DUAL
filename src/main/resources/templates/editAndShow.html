@@ -21,10 +21,10 @@
                 <input type="number" name="hoursDone" id="horas" value="0" min="0" />
 
                 <label for="fecha">Fecha:</label>
-                <input type="date" name="date" id="fecha" />
+                <input type="date" name="date" id="fecha" th:value="${#dates.format(t.date, 'yyyy-MM-dd')}" />
 
                 <label for="titulo">Actividad Realizada:</label>
-                <input type="text" name="name" id="titulo" />
+                <input type="text" name="name" id="titulo"/>
             </div>
 
             <div class="campo">

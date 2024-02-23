@@ -12,6 +12,7 @@ public class Task {
     private Long id;
 
     @Column(name = "fecha")
+    @Temporal(TemporalType.DATE)
     private Date date;
 
     @Column(name = "tipo_practica")

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Servicio de Gestion de actividades extraescolares
@@ -48,9 +49,14 @@ public class ExtraCurricularServiceImpl implements extraCurricularServiceI{
     }
 
     @Override
-    public Task deleteNewActivity(Task t) {
+    public Task deleteExistentActivity(Long id) {
+        Task t = null;
+        Optional<Task> optionalTask = taskRepository.findById(id);
 
-        taskRepository.delete(t);
+        if (optionalTask.isPresent()) {
+             t = optionalTask.get();
+        }
+        taskRepository.deleteById(id);
 
         return t;
     }

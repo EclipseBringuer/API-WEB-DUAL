@@ -19,7 +19,7 @@ public interface extraCurricularServiceI {
     Task  updateExistentActivity(Task t);
 
     /** Borrar una nueva actividad */
-    Task  deleteNewActivity(Task t);
+    Task  deleteExistentActivity(Long id);
 
 
 
