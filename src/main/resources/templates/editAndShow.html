@@ -18,24 +18,24 @@
 
             <div class="campo">
                 <label for="horas">Horas realizadas</label>
-                <input type="number" name="hoursDone" id="horas" value="0" min="0" />
+                <input type="number" name="hoursDone" id="horas" th:value="${actividad != null ? actividad.getHoursDone() : 0}" min="0" />
 
                 <label for="fecha">Fecha:</label>
-                <input type="date" name="date" id="fecha" >
+                <input type="date" name="date" id="fecha" th:value="${actividad!= null?actividad.getDate():''}" >
 
                 <label for="titulo">Actividad Realizada:</label>
-                <input type="text" name="name" id="titulo"/>
+                <input type="text" name="name" id="titulo" th:value="${actividad!= null?actividad.getName():''}"/>
             </div>
 
             <div class="campo">
                 <label for="tipos">Tipo:</label>
-                <select id="tipos" name="practiceKind">
+                <select id="tipos" name="practiceKind" th:value="${actividad!= null?actividad.getPracticeKind():'Dual'}">
                     <option value="fct">FCT</option>
                     <option value="dual">Dual</option>
                 </select>
 
                 <label for="observacion">Observaciones:</label>
-                <textarea name="observations" id="observacion"></textarea>
+                <textarea name="observations" id="observacion" th:value="${actividad!= null?actividad.getObservations():''}"></textarea>
             </div>
 
         </div>
