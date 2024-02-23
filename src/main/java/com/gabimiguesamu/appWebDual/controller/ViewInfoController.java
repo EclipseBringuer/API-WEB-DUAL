@@ -26,4 +26,4 @@ public class ViewInfoController {
         return "index";
     }
 }
-//asas
+//asasss
