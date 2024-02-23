@@ -35,7 +35,7 @@
                 </select>
 
                 <label for="observacion">Observaciones:</label>
-                <textarea name="observations" id="observacion" th:value="${actividad!= null?actividad.getObservations():''}"></textarea>
+                <textarea name="observations" id="observacion" th:text="${actividad!= null?actividad.getObservations():''}"></textarea>
             </div>
 
         </div>

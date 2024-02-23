@@ -69,15 +69,17 @@
             <th>Fecha</th>
             <th>Horas</th>
             <th>Observaciones</th>
+            <th>Acciones</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="task : ${alumno.getTaskList()}" th:data-taskId="${task.getId()}" th:onclick="'redirectToTaskEdit('+${task.id}+')'" style="cursor: pointer;">
+        <tr th:each="task : ${alumno.getTaskList()}">
             <td th:text="${task.name}"></td>
             <td th:text="${task.practiceKind}"></td>
             <td th:text="${task.date}"></td>
             <td th:text="${task.hoursDone}"></td>
             <td th:text="${task.observations}"></td>
+            <td><a th:href="${'http://localhost:8080/taskEdit/'+task.id}"><button>Editar</button></a></td>
         </tr>
 
         </tbody>
@@ -87,11 +89,6 @@
     </form>
 
 </div>
-<script th:inline="javascript">
-    function redirectToTaskEdit(taskId) {
-        window.location.href = '/taskEdit?id=' + taskId;
-    }
-</script>
 </body>
 
 </html>
