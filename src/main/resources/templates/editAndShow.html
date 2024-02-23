@@ -21,7 +21,7 @@
                 <input type="number" name="hoursDone" id="horas" th:value="${actividad != null ? actividad.getHoursDone() : 0}" min="0" />
 
                 <label for="fecha">Fecha:</label>
-                <input type="date" name="date" id="fecha" th:value="${#dates.format(actividad.getDate(), 'yyyy-MM-dd')}" >
+                <input type="date" name="date" id="fecha" th:value="${actividad != null ? #dates.format(actividad.getDate(), 'yyyy-MM-dd'): 0}" >
 
                 <label for="titulo">Actividad Realizada:</label>
                 <input type="text" name="name" id="titulo" th:value="${actividad!= null?actividad.getName():''}"/>
