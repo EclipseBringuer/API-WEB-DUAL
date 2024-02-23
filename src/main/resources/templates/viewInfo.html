@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/css/viewInfo-style.css}" />
+    <title>ViewInfo</title>
+    <style>
+        .selected{
+            border:solid 3px white;
+        }
+    </style>
+</head>
+<body th:with="alumno=${session.alumno}">
+<aside>
+    <img alt="Imagen de alumno" th:src="@{/img/usuario.png}" />
+    <p>Gabriel Rincón López</p>
+    <ul>
+        <a th:href="@{/info}"><li th:class="${isProfe}?'selected':''">Ver Información del Profesor</li></a>
+        <a th:href="@{/info/2ndOption}"><li th:class="${isProfe}?'':'selected'">Ver informacion de la Empresa</li></a>
+        <a th:href="@{/info/backwards}"><li>Volver</li></a>
+    </ul>
+</aside>
+<main th:if="${isProfe}">
+    <h1>Información del profesor</h1>
+    <img alt="foto del profesor" th:src="${alumno.getTeacher().getImage()}">
+    <h2 th:text="${alumno.getTeacher().getName()+' '+alumno.getTeacher().getLastName()}"></h2>
+    <p><strong>Dirección de contacto: </strong><span th:text="${alumno.getTeacher().getEmail()}"></span></p>
+</main>
+<main th:unless="${isProfe}">
+    <h1>Información de la empresa</h1>
+    <img alt="foto del profesor" th:src="${alumno.getEnterprise().getLogo()}">
+    <h2 th:text="${alumno.getEnterprise().getName()}"></h2>
+    <p><strong>Dirección de contacto: </strong><span th:text="${alumno.getEnterprise().getEmail()}"></span></p>
+</main>
+</body>
+</html>
