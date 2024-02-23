@@ -1,6 +1,8 @@
 package com.gabimiguesamu.appWebDual.model;
 
 import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 @Entity
@@ -12,7 +14,6 @@ public class Task {
     private Long id;
 
     @Column(name = "fecha")
-    @Temporal(TemporalType.DATE)
     private Date date;
 
     @Column(name = "tipo_practica")

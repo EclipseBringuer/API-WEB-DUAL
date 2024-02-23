@@ -72,13 +72,13 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="task : ${alumno.getTaskList()}">
+       <a th:each="task : ${alumno.getTaskList()}" th:href="@{/taskEdit}" > <tr>
             <td th:text="${task.name}"></td>
             <td th:text="${task.practiceKind}"></td>
             <td th:text="${task.date}"></td>
             <td th:text="${task.hoursDone}"></td>
             <td th:text="${task.observations}"></td>
-        </tr>
+        </tr> </a>
 
         </tbody>
     </table>
