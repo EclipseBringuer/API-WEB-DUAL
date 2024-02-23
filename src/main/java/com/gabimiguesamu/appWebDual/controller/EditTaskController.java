@@ -51,8 +51,6 @@ public class EditTaskController {
 
         Student s = (Student) session.getAttribute("alumno");
 
-
-
         extraCurricularService.saveNewActivity(t);
 
         t = extraCurricularService.singleNameActivity(t.getName());
