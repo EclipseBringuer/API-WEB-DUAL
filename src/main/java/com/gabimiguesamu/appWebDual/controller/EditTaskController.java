@@ -27,7 +27,9 @@ public class EditTaskController {
     }
 
     @GetMapping("/taskEdit")
-    public String landPage() {
+    public String landPage(Model model) {
+        var actividad = new Task();
+        model.addAttribute("actividad",actividad);
         return "editAndShow";
     }
 
