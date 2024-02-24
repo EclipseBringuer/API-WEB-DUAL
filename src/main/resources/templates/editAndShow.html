@@ -13,7 +13,7 @@
 </aside>
 <main>
     <h1>Añadir actividad:</h1>
-    <form method="post" th:action="@{/save}">
+    <form method="post" th:action="${actividad.getId() != null ? '/update' : '/save'}">
         <div class="campos">
 
             <div class="campo">

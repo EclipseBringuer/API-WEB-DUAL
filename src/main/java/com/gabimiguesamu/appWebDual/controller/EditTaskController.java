@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -54,9 +55,9 @@ public class EditTaskController {
     @PostMapping("/save")
     public String saveActivity(@ModelAttribute Task t, HttpSession session) {
 
-        Student s = (Student) session.getAttribute("alumno");
-
         if(t.getId() == null) {
+
+            Student s = (Student) session.getAttribute("alumno");
 
             //TODO ARREGLAR QUE SI LA TAREA YA EXISTE, EL MODELO LE QUITA EL ID Y LA REPITE PARA GUARDARLA
 
@@ -69,8 +70,10 @@ public class EditTaskController {
             s.getTaskList().add(t);
 
             session.setAttribute("alumno", s);
+        }else {
+
+            return "redirect:/update";
         }
-        session.setAttribute("alumno", s);
 
         return "index";
 
@@ -81,11 +84,13 @@ public class EditTaskController {
 
         Student s = (Student) session.getAttribute("alumno");
 
-        s.getTaskList().add(t);
-
-        //TODO comprobar que se le ponga al alumno en la base de datos
-
         extraCurricularService.saveNewActivity(t);
+
+        s.getTaskList().clear();
+
+        s.getTaskList().addAll(extraCurricularService.allStudentActivities(s.getId()));
+
+        session.setAttribute("alumno",s);
 
         return "index";
 
