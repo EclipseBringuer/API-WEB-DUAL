@@ -17,38 +17,42 @@
         <div class="campos">
 
             <div class="campo">
+
                 <label for="horas">Horas realizadas</label>
-                <input type="number" name="hoursDone" id="horas" value="0" min="0" />
+                <input type="number" name="hoursDone" id="horas" th:value="${actividad != null ? actividad.getHoursDone() : 0}" min="0" />
 
                 <label for="fecha">Fecha:</label>
-                <input type="date" name="date" id="fecha" >
+                <input type="date" name="date" id="fecha" th:value="${actividad != null ? #dates.format(actividad.getDate(), 'yyyy-MM-dd'): 0}" >
 
                 <label for="titulo">Actividad Realizada:</label>
-                <input type="text" name="name" id="titulo"/>
+                <input type="text" name="name" id="titulo" th:value="${actividad!= null?actividad.getName():''}"/>
+
+                <label style="display: none" for="id"></label>
+                <input type="text" name="id" id="id" th:value="${actividad!= null?actividad.getId():''}" style="display: none"/>
+
             </div>
 
             <div class="campo">
                 <label for="tipos">Tipo:</label>
-                <select id="tipos" name="practiceKind">
+                <select id="tipos" name="practiceKind" th:value="${actividad!= null?actividad.getPracticeKind():'Dual'}">
                     <option value="fct">FCT</option>
                     <option value="dual">Dual</option>
                 </select>
 
                 <label for="observacion">Observaciones:</label>
-                <textarea name="observations" id="observacion"></textarea>
+                <textarea name="observations" id="observacion" th:text="${actividad!= null?actividad.getObservations():''}"></textarea>
             </div>
 
         </div>
 
         <button type="submit">Guardar</button>
-        <form th:action="@{/delete}" method="get">
-            <button type="submit">Eliminar</button>
-        </form>
+        <a th:href="@{/delete}">
+            <button type="button" style="width: 100%">Eliminar</button>
+        </a>
+        <a th:href="@{/backwards}">
+            <button type="button" style="width: 100%">Volver</button>
+        </a>
     </form>
-    <form th:action="@{/backwards}" method="get">
-        <button type="submit">Volver</button>
-    </form>
-
 </main>
 </body>
 </html>
