@@ -37,10 +37,15 @@ public class EditTaskController {
 
     @GetMapping("/taskEdit/{id}")
     public String loadToUpdate(@PathVariable Long id, HttpSession session, Model model) {
+
         Student s = (Student) session.getAttribute("alumno");
+
         for (Task task: s.getTaskList()) {
+
             if(Objects.equals(task.getId(), id)){
+
                model.addAttribute("actividad", task);
+
             }
         }
         return "editAndShow";
@@ -51,12 +56,20 @@ public class EditTaskController {
 
         Student s = (Student) session.getAttribute("alumno");
 
-        extraCurricularService.saveNewActivity(t);
+        if(t.getId() == null) {
 
-        t = extraCurricularService.singleNameActivity(t.getName());
+            //TODO ARREGLAR QUE SI LA TAREA YA EXISTE, EL MODELO LE QUITA EL ID Y LA REPITE PARA GUARDARLA
 
-        s.getTaskList().add(t);
+            //TODO PROBAR LOS BOTONES DE ELIMINAR Y DE GUARDAR Y QUITAR LOS FILTROS
 
+            extraCurricularService.saveNewActivity(t);
+
+            t = extraCurricularService.singleNameActivity(t.getName());
+
+            s.getTaskList().add(t);
+
+            session.setAttribute("alumno", s);
+        }
         session.setAttribute("alumno", s);
 
         return "index";
@@ -71,6 +84,7 @@ public class EditTaskController {
         s.getTaskList().add(t);
 
         //TODO comprobar que se le ponga al alumno en la base de datos
+
         extraCurricularService.saveNewActivity(t);
 
         return "index";

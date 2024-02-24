@@ -17,6 +17,7 @@
         <div class="campos">
 
             <div class="campo">
+
                 <label for="horas">Horas realizadas</label>
                 <input type="number" name="hoursDone" id="horas" th:value="${actividad != null ? actividad.getHoursDone() : 0}" min="0" />
 
@@ -25,6 +26,10 @@
 
                 <label for="titulo">Actividad Realizada:</label>
                 <input type="text" name="name" id="titulo" th:value="${actividad!= null?actividad.getName():''}"/>
+
+                <label style="display: none" for="id"></label>
+                <input type="text" name="id" id="id" th:value="${actividad!= null?actividad.getId():''}" style="display: none"/>
+
             </div>
 
             <div class="campo">
