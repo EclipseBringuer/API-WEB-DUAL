@@ -101,7 +101,6 @@ public class EditTaskController {
 
     }
 
-
     @PostMapping("/delete/{id}")
     public String deleteActivity(@PathVariable Long id, HttpSession session) {
 
