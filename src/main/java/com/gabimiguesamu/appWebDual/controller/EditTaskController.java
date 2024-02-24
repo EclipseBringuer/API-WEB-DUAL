@@ -27,7 +27,7 @@ public class EditTaskController {
     }
 
     @GetMapping("/taskEdit")
-    public String landPage(Model model) {
+    public String landPage(HttpSession session, Model model) {
         var actividad = new Task();
         model.addAttribute("actividad",actividad);
         return "editAndShow";
@@ -61,6 +61,7 @@ public class EditTaskController {
 
             Student s = (Student) session.getAttribute("alumno");
 
+            t.setStudent(s);
             //TODO ARREGLAR QUE SI LA TAREA YA EXISTE, EL MODELO LE QUITA EL ID Y LA REPITE PARA GUARDARLA
 
             //TODO PROBAR LOS BOTONES DE ELIMINAR Y DE GUARDAR Y QUITAR LOS FILTROS

@@ -28,17 +28,30 @@ public class Task {
     @Column(name = "observaciones")
     private String observations;
 
-    public Task(Long id, Date date, String practiceKind, Integer hoursDone, String name, String observations) {
+    @ManyToOne
+    @JoinColumn(name="id_alumno")
+    private Student student;
+
+    public Task(Long id, Date date, String practiceKind, Integer hoursDone, String name, String observations, Student student) {
         this.id = id;
         this.date = date;
         this.practiceKind = practiceKind;
         this.hoursDone = hoursDone;
         this.name = name;
         this.observations = observations;
+        this.student=student;
     }
 
     public Task(){
 
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
     public Long getId() {
@@ -98,6 +111,7 @@ public class Task {
                 ", hoursDone=" + hoursDone +
                 ", name='" + name + '\'' +
                 ", observations='" + observations + '\'' +
+                ", student=" + student.getName() +
                 '}';
     }
 }

@@ -28,7 +28,7 @@
                 <input type="text" name="name" id="titulo" th:value="${actividad!= null?actividad.getName():''}"/>
 
                 <label style="display: none" for="id"></label>
-                <input type="text" name="id" id="id" th:value="${actividad!= null?actividad.getId():''}" style="display: none"/>
+                <input type="text" name="id" id="id" th:value="${actividad!= null?actividad.getId():null}" style="display: none"/>
 
             </div>
 
