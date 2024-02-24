@@ -46,9 +46,9 @@
         </div>
 
         <button type="submit">Guardar</button>
-        <a th:href="@{/delete}">
-            <button type="button" style="width: 100%">Eliminar</button>
-        </a>
+        <form th:action="${'http://localhost:8080/delete/'+actividad.getId()}" method="post">
+            <button style="width: 100%">Eliminar</button>
+        </form>
         <a th:href="@{/backwards}">
             <button type="button" style="width: 100%">Volver</button>
         </a>

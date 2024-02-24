@@ -24,6 +24,11 @@ img{
     height: 140px;
     width: auto;
 }
+
+.btnContainer{
+    flex:1;
+}
+
 .header{
     display: flex;
     align-items: center;
@@ -63,32 +68,6 @@ img{
     border-radius: 40px;
     border:solid 8px #002859;
     margin-right: 10px;
-}
-.filters {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
-    justify-content: center;
-    width: 100%;
-}
-
-.filter-item {
-    margin-right: 20px;
-    margin-bottom: 10px;
-}
-
-.filter-item *{
-    margin-bottom: 5px;
-}
-
-select,
-input {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    width: 100%;
-    margin-top: 10px;
 }
 
 .progress {
@@ -182,13 +161,4 @@ button:hover {
 }
 tr:hover{
     background-color: lightgrey;
-}
-input,select{
-    border-radius: 15px;
-    padding: 15px;
-    background-color: lightgray;
-    font-weight: bold;
-    font-size: 14px;
-    border: none;
-    width: 80%;
 }

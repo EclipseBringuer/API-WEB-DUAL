@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" th:href="@{/css/index-style.css}" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" th:href="@{/css/index-style.css}"/>
     <title>Main</title>
 </head>
 <body th:with="alumno=${session.alumno}">
 <div class="folio">
     <div class="header">
         <div class="title">
-            <img th:src="@{/img/Cesur-removebg.png}" alt="logo de cesur" />
+            <img th:src="@{/img/Cesur-removebg.png}" alt="logo de cesur"/>
             <div>
                 <h1>CESUR</h1>
                 <p>Tu Centro Oficial de FP</p>
@@ -18,12 +18,17 @@
         </div>
         <div class="perfil">
 
-            <img th:src="@{/img/Francisco-Romero.jpg}" alt="logo de cesur" />
+            <img th:src="@{/img/Francisco-Romero.jpg}" alt="logo de cesur"/>
             <div class="infoPerfil">
-            <h2 th:text="${alumno.getName()+' '+alumno.getLastName()}"></h2>
-                <a th:href="@{/info}">
-                    <button class="info">Info</button>
-                </a>
+                <h2 th:text="${alumno.getName()+' '+alumno.getLastName()}"></h2>
+                <div class="btnContainer">
+                    <a style="margin-right: 15px" th:href="@{/info}">
+                        <button class="info">Info</button>
+                    </a>
+                    <a th:href="@{/info}">
+                        <button class="info">Logout</button>
+                    </a>
+                </div>
             </div>
 
         </div>
@@ -40,25 +45,6 @@
             <div class="progress-bar">
                 <div class="completed-progress" th:style="'width: ' + ${ (alumno.getFctHours()*100)/600} + '%'"></div>
             </div>
-        </div>
-    </div>
-    <div class="filters">
-        <div class="filter-item">
-            <label for="task-filter">Nombre de la tarea:</label>
-            <input type="search" placeholder="Escribe el titulo aquí..."/>
-        </div>
-
-        <div class="filter-item">
-            <label for="task-filter">Tipo de práctica:</label>
-            <select id="task-filter">
-                <option value="all">Todas</option>
-                <option value="dual">Dual</option>
-                <option value="fct">FCT</option>
-            </select>
-        </div>
-        <div class="filter-item">
-            <label for="date-filter">Filtrar por fecha:</label>
-            <input type="date" id="date-filter" />
         </div>
     </div>
     <table>
@@ -79,16 +65,15 @@
             <td th:text="${task.date}"></td>
             <td th:text="${task.hoursDone}"></td>
             <td th:text="${task.observations}"></td>
-            <td><a th:href="${'http://localhost:8080/taskEdit/'+task.id}"><button>Editar</button></a></td>
+            <td><a th:href="${'http://localhost:8080/taskEdit/'+task.id}">
+                <button>Ver/Editar</button>
+            </a></td>
         </tr>
-
         </tbody>
     </table>
     <form th:action="@{/taskEdit}" method="get">
         <button class="crearbtn" type="submit">Crear Actividad</button>
     </form>
-
 </div>
 </body>
-
 </html>
