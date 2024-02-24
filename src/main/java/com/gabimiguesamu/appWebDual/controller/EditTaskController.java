@@ -101,8 +101,8 @@ public class EditTaskController {
 
     }
 
-    @PostMapping("/delete")
-    public String deleteActivity(@RequestParam Long taskId, HttpSession session) {
+    @PostMapping("/delete/{taskId}")
+    public String deleteActivity(@PathVariable Long taskId, HttpSession session) {
 
         Student student = (Student) session.getAttribute("alumno");
 
