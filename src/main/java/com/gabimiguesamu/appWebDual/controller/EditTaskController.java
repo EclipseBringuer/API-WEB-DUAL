@@ -79,12 +79,17 @@ public class EditTaskController {
 
     }
 
-    @PostMapping("/update")
-    public String updateActivity(@ModelAttribute Task t, HttpSession session) {
+    @PostMapping("/update/{id}")
+    public String updateActivity(@ModelAttribute Task t, HttpSession session, Long id) {
 
         Student s = (Student) session.getAttribute("alumno");
-
-        extraCurricularService.saveNewActivity(t);
+        var actividadOriginal = extraCurricularService.singleActivity(id);
+        actividadOriginal.setName(t.getName());
+        actividadOriginal.setDate(t.getDate());
+        actividadOriginal.setObservations(t.getObservations());
+        actividadOriginal.setHoursDone(t.getHoursDone());
+        actividadOriginal.setPracticeKind(t.getPracticeKind());
+        extraCurricularService.saveNewActivity(actividadOriginal);
 
         s.getTaskList().clear();
 

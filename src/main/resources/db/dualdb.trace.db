@@ -1026,3 +1026,6 @@ Database is already closed (to disable automatic closing at VM shutdown, add ";D
 2024-02-24 14:04:39.886540+01:00 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
 The object is already closed [90007-224]
+2024-02-24 16:12:42.510155+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
