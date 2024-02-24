@@ -162,3 +162,9 @@ button:hover {
 tr:hover{
     background-color: lightgrey;
 }
+
+.btnLogout {
+    background-color: darkred;
+    color: white;
+    border:solid 3px #ffc828;
+}
