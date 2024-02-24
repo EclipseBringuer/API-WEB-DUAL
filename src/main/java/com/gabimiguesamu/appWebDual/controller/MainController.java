@@ -2,6 +2,8 @@ package com.gabimiguesamu.appWebDual.controller;
 
 
 import com.gabimiguesamu.appWebDual.model.Task;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,6 +44,19 @@ public class MainController {
         return "editTask";
     }
 
+    @GetMapping("/logout")
+
+    public String logout(HttpServletRequest request) {
+
+        HttpSession session = request.getSession(false);
+
+        if (session != null) {
+            session.invalidate();
+        }
+
+        return "login";
+
+    }
 
 
 
