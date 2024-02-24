@@ -62,9 +62,6 @@ public class EditTaskController {
             Student s = (Student) session.getAttribute("alumno");
 
             t.setStudent(s);
-            //TODO ARREGLAR QUE SI LA TAREA YA EXISTE, EL MODELO LE QUITA EL ID Y LA REPITE PARA GUARDARLA
-
-            //TODO PROBAR LOS BOTONES DE ELIMINAR Y DE GUARDAR Y QUITAR LOS FILTROS
 
             extraCurricularService.saveNewActivity(t);
 
