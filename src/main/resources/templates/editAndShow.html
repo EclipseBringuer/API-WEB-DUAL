@@ -13,7 +13,7 @@
 </aside>
 <main>
     <h1>Añadir actividad:</h1>
-    <form method="post" th:action="${actividad.getId() != null ? '/update/'+actividad.getId() : '/save'}">
+    <form method="post" th:action="${actividad != null ? '/update/'+actividad.getId() : '/save'}">
         <div class="campos">
 
             <div class="campo">
@@ -46,12 +46,13 @@
         </div>
 
         <button type="submit">Guardar</button>
-        <form th:action="${'http://localhost:8080/delete/'+actividad.getId()}" method="post">
-            <button style="width: 100%">Eliminar</button>
-        </form>
         <a th:href="@{/backwards}">
             <button type="button" style="width: 100%">Volver</button>
         </a>
+    </form>
+
+    <form th:action="${'http://localhost:8080/delete/'+actividad.getId()}" method="post">
+        <button style="width: 100%">Eliminar</button>
     </form>
 </main>
 </body>

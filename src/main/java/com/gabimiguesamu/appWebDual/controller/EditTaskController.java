@@ -101,16 +101,16 @@ public class EditTaskController {
 
     }
 
-    @PostMapping("/delete")
-    public String deleteActivity(@RequestParam Long taskId, HttpSession session) {
+    @PostMapping("/delete/{id}")
+    public String deleteActivity(@PathVariable Long id, HttpSession session) {
 
         Student student = (Student) session.getAttribute("alumno");
 
-        student.getTaskList().removeIf(task -> task.getId().equals(taskId));
+        student.getTaskList().removeIf(task -> task.getId().equals(id));
 
         session.setAttribute("alumno", student);
 
-        extraCurricularService.deleteExistentActivity(taskId);
+        extraCurricularService.deleteExistentActivity(id);
 
         return "index";
     }
